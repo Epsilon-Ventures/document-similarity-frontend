@@ -39,26 +39,25 @@ jobs:
       - name: Build and push
         uses: docker/build-push-action@v3
         with:
-          context: ./Dockerfile.prod
+          context: .
+          file: ./Dockerfile.prod
           push: ${{ github.event_name != 'pull_request' }}
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
 
-    release:
-      jobs:
-        build:
-          runs-on: ubuntu-latest
-          steps:
-            - name: Checkout
-              uses: actions/checkout@v3
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
 
-            - name: Release a Docker container to Heroku.
-              uses: gonuit/heroku-docker-deploy@v1.3.3
-              with:
-                email: ${{ secrets.HEROKU_EMAIL }}
-                heroku_api_key: ${{ secrets.HEROKU_API_KEY }}
-                heroku_app_name: ${{ secrets.HEROKU_APP_NAME }}
-                dockerfile_directory: ./
-                dockerfile_name: Dockerfile.prod
-                docker_options: '--no-cache'
-                process_type: web
+      - name: Release a Docker container to Heroku.
+        uses: gonuit/heroku-docker-deploy@v1.3.3
+        with:
+          email: ${{ secrets.HEROKU_EMAIL }}
+          heroku_api_key: ${{ secrets.HEROKU_API_KEY }}
+          heroku_app_name: ${{ secrets.HEROKU_APP_NAME }}
+          dockerfile_directory: ./
+          dockerfile_name: Dockerfile.prod
+          docker_options: '--no-cache'
+          process_type: web
