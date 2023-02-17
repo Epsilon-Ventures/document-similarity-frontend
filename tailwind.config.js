@@ -3,10 +3,12 @@ module.exports = {
   plugins: [require('@tailwindcss/forms')],
   theme: {
     colors: {
-      white: '#f8f9fa',
-      black: '#212529',
+      white: '#ffffff',
+      black: '353740',
+      'dark-grey': '#1E1E1E',
+      'light-grey': '#F2F2F2',
       source: {
-        primary: '#ffc078',
+        primary: '#6338ee',
       },
       ref: {
         primary: {
