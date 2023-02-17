@@ -1,10 +1,42 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-@layer base {
-  html {
-    -moz-osx-font-smoothing: grayscale;
-    -webkit-font-smoothing: antialiased;
+html {
+  @apply xl:text-[62.5%] lg:text-[56.25%] text-[50%];
+}
+body {
+  @apply font-opensans leading-none;
+}
+h1 {
+  @apply font-montserrat text-headline-large;
+}
+h2 {
+  @apply font-montserrat text-headline-medium;
+}
+h3 {
+  @apply text-headline-small;
+}
+img,
+video,
+iframe {
+  max-inline-size: 100%;
+  block-size: auto;
+  object-fit: cover;
+  object-position: top center;
+}
+img {
+  aspect-ratio: 4/3;
+}
+@media (min-width: 1024px) {
+  .text-body-large {
+    font-size: 2rem;
+  }
+  .text-title-large {
+    font-size: 2.66667rem;
+  }
+}
+@media (min-width: 1280px) {
+  .text-body-large {
+    font-size: 1.8rem;
+  }
+  .text-title-large {
+    font-size: 2.4rem;
   }
 }
