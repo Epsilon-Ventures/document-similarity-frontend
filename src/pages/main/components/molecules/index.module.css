@@ -1,0 +1,8 @@
+.main {
+  padding-block: 2.4rem;
+  padding-inline: 2.4rem;
+}
+
+.shadow {
+  box-shadow: 6px 0 6px -5px rgb(53, 55, 64, 0.2);
+}

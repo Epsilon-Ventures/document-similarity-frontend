@@ -1,0 +1,5 @@
+.button {
+  padding-inline: 2.4rem;
+  padding-block: 1.2rem;
+  background: linear-gradient(90deg, #8822e3 0%, #3c04f0 100%);
+}
