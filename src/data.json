@@ -1,0 +1,32 @@
+{
+  "subject": [
+    "Computer Networks",
+    "Operating Systems",
+    "Computer Organization and Architecture",
+    "Data Structures and Algorithms",
+    "Database Management Systems"
+  ],
+  "year": ["2072", "2073", "2074", "2075", "2076", "2077", "2078", "2079"],
+  "questions": [
+    {
+      "question": "What is the difference between IPV4 and IPV6...see more",
+      "simScore": "1"
+    },
+    {
+      "question": "What is the similarity between IPV4 and IPV6...see more",
+      "simScore": "0.87"
+    },
+    {
+      "question": "What are the difference between IPV4 and IPV6...see more",
+      "simScore": "0.78"
+    },
+    {
+      "question": "What is the better between IPV4 and IPV6...see more",
+      "simScore": "0.75"
+    },
+    {
+      "question": "What is IPV6 required",
+      "simScore": "0.7"
+    }
+  ]
+}

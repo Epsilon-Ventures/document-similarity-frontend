@@ -1,11 +1,15 @@
 module.exports = {
-  content: ['./*.html', './src/**/*.css'],
-  plugins: [require('@tailwindcss/forms')],
+  content: ['./*.html', './src/**/*.{js,ts,jsx,tsx}'],
+  plugins: [
+    function progressPercent(progress) {
+      return `w-[${progress}%]`;
+    },
+  ],
   theme: {
     colors: {
       white: '#ffffff',
-      black: '353740',
-      'dark-grey': '#1E1E1E',
+      black: '#1E1E1E',
+      'dark-grey': '#353740',
       'light-grey': '#F2F2F2',
       source: {
         primary: '#6338ee',
@@ -83,11 +87,11 @@ module.exports = {
         },
       ],
       'headline-small': [
-        '1.6rem',
+        '1.8rem',
         {
           lineHeight: '1.2',
           letterSpacing: '0.25px',
-          fontWeight: '400',
+          fontWeight: '500',
         },
       ],
       'headline-medium': [
@@ -95,7 +99,7 @@ module.exports = {
         {
           lineHeight: '1.2',
           letterSpacing: '',
-          fontWeight: '',
+          fontWeight: '400',
         },
       ],
       'headline-large': [
@@ -119,7 +123,7 @@ module.exports = {
         {
           lineHeight: '1.2',
           letterSpacing: '',
-          fontWeight: '500',
+          fontWeight: '400',
         },
       ],
       'title-large': [
@@ -132,6 +136,7 @@ module.exports = {
       ],
     },
     spacing: {
+      0: '0',
       1: '1.2rem',
       2: '2.4rem',
       3: '4.8rem',
@@ -140,8 +145,7 @@ module.exports = {
       6: '12.8rem',
     },
     fontFamily: {
-      opensans: ['Open Sans', 'sans-serif'],
-      montserrat: ['Montserrat', 'sans-serif'],
+      poppins: ['Poppins', 'sans-serif'],
     },
     extend: {
       gridTemplateColumns: {

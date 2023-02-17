@@ -1,14 +1,23 @@
+@tailwind utilities;
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 html {
   @apply xl:text-[62.5%] lg:text-[56.25%] text-[50%];
 }
 body {
-  @apply font-opensans leading-none;
+  @apply font-poppins leading-none text-black;
 }
 h1 {
-  @apply font-montserrat text-headline-large;
+  @apply text-headline-large;
 }
 h2 {
-  @apply font-montserrat text-headline-medium;
+  @apply text-headline-medium;
 }
 h3 {
   @apply text-headline-small;
@@ -22,8 +31,20 @@ iframe {
   object-position: top center;
 }
 img {
-  aspect-ratio: 4/3;
+  height: 100%;
+  width: 100%;
 }
+
+ul {
+  list-style-type: none;
+}
+option {
+  padding-block: 1.6rem;
+}
+.container {
+  padding-inline: 4.8rem;
+}
+
 @media (min-width: 1024px) {
   .text-body-large {
     font-size: 2rem;
