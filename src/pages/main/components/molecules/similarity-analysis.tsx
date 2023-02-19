@@ -1,18 +1,23 @@
+import { ResponseModel } from 'pages/models';
 import { SimilarityCard } from '../atoms';
-import { questions } from '../../../../data.json';
 import styles from './parameters.module.css';
 
-function SimilarityAnalysis() {
+interface Props {
+  responseList: ResponseModel[];
+}
+
+function SimilarityAnalysis({ responseList }: Props) {
   const { parameters } = styles;
+
   return (
     <div className={`flex flex-col gap-3 ${parameters}`}>
       <h2>Similarity Analysis</h2>
       <div className="flex flex-col gap-1">
-        {questions.map(({ question, simScore }) => (
+        {responseList.map(({ question, sim_score: simScore, id }) => (
           <SimilarityCard
-            key={question}
+            key={id.toString()}
             question={question}
-            simScore={+simScore}
+            simScore={simScore}
           />
         ))}
       </div>
