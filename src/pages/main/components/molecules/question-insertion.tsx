@@ -1,8 +1,38 @@
 import { Button, Textarea } from 'components/atoms';
+import { useState } from 'react';
+import { ResponseModel } from 'pages/models';
 import styles from './index.module.css';
 
-function QuestionInsertion() {
+interface Props {
+  setResponseList: React.Dispatch<React.SetStateAction<ResponseModel[]>>;
+}
+
+function QuestionInsertion({ setResponseList }: Props) {
+  const [question, setQuestion] = useState<string>('');
+
   const { main, shadow } = styles;
+
+  const submitHandler = async (e: React.FormEvent) => {
+    e.preventDefault();
+
+    try {
+      const response = await fetch(
+        'http://localhost:8000/api/database-connection/',
+        {
+          method: 'POST',
+          headers: {
+            'content-type': 'application/json',
+          },
+          body: JSON.stringify({ question }),
+        },
+      );
+      const dataResponse = await response.json();
+      setResponseList(dataResponse);
+    } catch (err) {
+      // eslint-disable-next-line no-console
+      console.log(err);
+    }
+  };
 
   return (
     <div
@@ -16,8 +46,8 @@ function QuestionInsertion() {
           Load Model
         </Button>
       </div>
-      <form className="flex flex-col gap-2">
-        <Textarea placeholder="Enter question..." />
+      <form onSubmit={submitHandler} className="flex flex-col gap-2">
+        <Textarea setQuestion={setQuestion} placeholder="Enter question..." />
         <Button className="w-max px-3" type="submit">
           Check
         </Button>
