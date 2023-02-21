@@ -1,0 +1,23 @@
+.spinner {
+  background: conic-gradient(
+    var(--light-grey) -30deg,
+    var(--primary-color) -30deg 90deg,
+    var(--light-grey) 90deg
+  );
+  animation: 2s infinite rotation;
+}
+
+.cover {
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
