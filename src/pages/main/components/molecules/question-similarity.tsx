@@ -6,13 +6,17 @@ import SimilarityAnalysis from './similarity-analysis';
 
 function QuestionSimilarity() {
   const [responseList, setResponseList] = useState<ResponseModel[]>([]);
+  const [loading, setIsLoading] = useState(false);
 
   return (
     <section className="h-[calc(100vh-6.4rem)]">
-      <div className="container grid grid-cols-4">
+      <div className="container grid grid-cols-8">
         <Parameters />
-        <QuestionInsertion setResponseList={setResponseList} />
-        <SimilarityAnalysis responseList={responseList} />
+        <QuestionInsertion
+          setResponseList={setResponseList}
+          setIsLoading={setIsLoading}
+        />
+        <SimilarityAnalysis responseList={responseList} loading={loading} />
       </div>
     </section>
   );

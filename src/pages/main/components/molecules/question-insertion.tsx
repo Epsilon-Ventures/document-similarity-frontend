@@ -5,15 +5,18 @@ import styles from './index.module.css';
 
 interface Props {
   setResponseList: React.Dispatch<React.SetStateAction<ResponseModel[]>>;
+  setIsLoading: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-function QuestionInsertion({ setResponseList }: Props) {
+function QuestionInsertion({ setResponseList, setIsLoading }: Props) {
   const [question, setQuestion] = useState<string>('');
 
   const { main, shadow } = styles;
 
   const submitHandler = async (e: React.FormEvent) => {
     e.preventDefault();
+    setIsLoading(true);
+    setResponseList([]);
 
     try {
       const response = await fetch(
@@ -28,6 +31,7 @@ function QuestionInsertion({ setResponseList }: Props) {
       );
       const dataResponse = await response.json();
       setResponseList(dataResponse);
+      setIsLoading(false);
     } catch (err) {
       // eslint-disable-next-line no-console
       console.log(err);
@@ -36,7 +40,7 @@ function QuestionInsertion({ setResponseList }: Props) {
 
   return (
     <div
-      className={`flex flex-col gap-3 border-r-4 col-span-2 ${main} ${shadow}`}
+      className={`flex flex-col gap-3 border-r-4 col-span-3 ${main} ${shadow}`}
     >
       <div className="headline flex justify-between items-center">
         <h1 className="text-source-primary text-headline-medium font-semibold ">

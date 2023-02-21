@@ -6,7 +6,11 @@
   margin: 0;
   padding: 0;
 }
-
+:root {
+  --primary-color: #6338ee;
+  --white: #fff;
+  --light-grey: #f2f2f2;
+}
 html {
   @apply xl:text-[62.5%] lg:text-[56.25%] text-[50%];
 }
@@ -34,7 +38,16 @@ img {
   height: 100%;
   width: 100%;
 }
-
+a {
+  text-decoration: none;
+  transition: all 0.15s ease-in-out;
+}
+a:link,
+a:visited,
+a:hover,
+a:active {
+  color: inherit;
+}
 ul {
   list-style-type: none;
 }
