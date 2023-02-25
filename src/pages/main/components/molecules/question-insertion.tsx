@@ -10,7 +10,7 @@ interface Props {
 
 function QuestionInsertion({ setResponseList, setIsLoading }: Props) {
   const [question, setQuestion] = useState<string>('');
-
+  const BASE_URL = import.meta.env.VITE_BACKEND_URL || 'localhost:8000';
   const { main, shadow } = styles;
 
   const submitHandler = async (e: React.FormEvent) => {
@@ -19,16 +19,13 @@ function QuestionInsertion({ setResponseList, setIsLoading }: Props) {
     setResponseList([]);
 
     try {
-      const response = await fetch(
-        'http://localhost:8000/api/database-connection/',
-        {
-          method: 'POST',
-          headers: {
-            'content-type': 'application/json',
-          },
-          body: JSON.stringify({ question }),
+      const response = await fetch(`${BASE_URL}/api/database-connection/`, {
+        method: 'POST',
+        headers: {
+          'content-type': 'application/json',
         },
-      );
+        body: JSON.stringify({ question }),
+      });
       const dataResponse = await response.json();
       setResponseList(dataResponse);
       setIsLoading(false);
