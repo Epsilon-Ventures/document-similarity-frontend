@@ -1,39 +1,13 @@
 import { Button, Textarea } from 'components/atoms';
-import { useState } from 'react';
-import { ResponseModel } from 'pages/models';
+import { PayloadModel } from 'pages/models';
 import styles from './index.module.css';
 
 interface Props {
-  setResponseList: React.Dispatch<React.SetStateAction<ResponseModel[]>>;
-  setIsLoading: React.Dispatch<React.SetStateAction<boolean>>;
+  setPayload: React.Dispatch<React.SetStateAction<PayloadModel>>;
 }
 
-function QuestionInsertion({ setResponseList, setIsLoading }: Props) {
-  const [question, setQuestion] = useState<string>('');
-  const BASE_URL = import.meta.env.VITE_BACKEND_URL || 'localhost:8000';
+function QuestionInsertion({ setPayload }: Props) {
   const { main, shadow } = styles;
-
-  const submitHandler = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsLoading(true);
-    setResponseList([]);
-
-    try {
-      const response = await fetch(`${BASE_URL}/api/database-connection/`, {
-        method: 'POST',
-        headers: {
-          'content-type': 'application/json',
-        },
-        body: JSON.stringify({ question }),
-      });
-      const dataResponse = await response.json();
-      setResponseList(dataResponse);
-      setIsLoading(false);
-    } catch (err) {
-      // eslint-disable-next-line no-console
-      console.log(err);
-    }
-  };
 
   return (
     <div
@@ -47,12 +21,12 @@ function QuestionInsertion({ setResponseList, setIsLoading }: Props) {
           Load Model
         </Button>
       </div>
-      <form onSubmit={submitHandler} className="flex flex-col gap-2">
-        <Textarea setQuestion={setQuestion} placeholder="Enter question..." />
+      <div className="flex flex-col gap-2">
+        <Textarea setPayload={setPayload} placeholder="Enter question..." />
         <Button className="w-max px-3" type="submit">
           Check
         </Button>
-      </form>
+      </div>
     </div>
   );
 }

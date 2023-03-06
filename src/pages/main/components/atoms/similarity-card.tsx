@@ -12,7 +12,7 @@ function SimilarityCard({ question, simScore }: SimilarityCardProps) {
   return (
     <div className={`rounded-xl ${similarity} flex flex-col gap-1`}>
       <p className="text-body-medium text-white">{question}</p>
-      <ProgressBar progress={(simScore * 100).toString()} />
+      <ProgressBar progress={(simScore * 100).toFixed().toString()} />
     </div>
   );
 }

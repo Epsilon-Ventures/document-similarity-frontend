@@ -1,9 +1,14 @@
 import { Select } from 'components/atoms';
+import { PayloadModel } from 'pages/models';
 import { subject, year } from '../../../../data.json';
 import styles from './parameters.module.css';
 import main from './index.module.css';
 
-function Parameters() {
+interface Props {
+  setPayload: React.Dispatch<React.SetStateAction<PayloadModel>>;
+}
+
+function Parameters({ setPayload }: Props) {
   const { parameters } = styles;
   const { shadow } = main;
   return (
@@ -14,6 +19,7 @@ function Parameters() {
           id="subject"
           defaultValue="-- Select Subject --"
           optionList={subject}
+          setPayload={setPayload}
         >
           Subject
         </Select>
