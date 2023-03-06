@@ -1,3 +1,4 @@
+import { PayloadModel } from 'pages/models';
 import { PropsWithChildren } from 'react';
 import styles from './select.module.css';
 
@@ -5,6 +6,7 @@ type SelectProps = {
   id: string;
   defaultValue: string;
   optionList: string[];
+  setPayload?: React.Dispatch<React.SetStateAction<PayloadModel>>;
 };
 
 function Select({
@@ -12,8 +14,15 @@ function Select({
   id,
   defaultValue,
   optionList,
+  setPayload = () => {},
 }: PropsWithChildren<SelectProps>) {
   const { select } = styles;
+  const payloadSubmitHandler = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    setPayload((previous) => ({
+      ...previous,
+      subject: e.target.value,
+    }));
+  };
 
   return (
     <div className="flex flex-col gap-1">
@@ -27,8 +36,9 @@ function Select({
         name={id}
         id={id}
         className={`border-light-grey rounded-lg ${select} bg-white border-2 cursor-pointer text-title-medium`}
+        onChange={payloadSubmitHandler}
       >
-        <option value={defaultValue}>{defaultValue}</option>
+        <option value="">{defaultValue}</option>
         {optionList.map((option) => (
           <option key={option} value={option}>
             {option}
@@ -40,3 +50,7 @@ function Select({
 }
 
 export default Select;
+
+Select.defaultProps = {
+  setPayload: () => {},
+};
