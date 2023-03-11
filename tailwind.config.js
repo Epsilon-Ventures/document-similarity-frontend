@@ -10,6 +10,7 @@ module.exports = {
       white: '#ffffff',
       black: '#1E1E1E',
       'dark-grey': '#353740',
+      grey: '#9F9F9F',
       'light-grey': '#F2F2F2',
       source: {
         primary: '#6338ee',
@@ -58,7 +59,7 @@ module.exports = {
         '2.25rem',
         {
           lineHeight: '1.5',
-          letterSpacing: '0.5px',
+          letterSpacing: '',
           fontWeight: '400',
         },
       ],

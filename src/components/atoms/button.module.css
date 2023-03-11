@@ -3,3 +3,8 @@
   padding-block: 1.2rem;
   background: linear-gradient(90deg, #8822e3 0%, #3c04f0 100%);
 }
+
+.button:disabled {
+  opacity: 0.25;
+  cursor: not-allowed;
+}
