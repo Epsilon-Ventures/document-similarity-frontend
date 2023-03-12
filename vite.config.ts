@@ -12,6 +12,8 @@ export default defineConfig((configEnv) => {
         pages: resolve(__dirname, 'src', 'pages'),
         components: resolve(__dirname, 'src', 'components'),
         hooks: resolve(__dirname, 'src', 'hooks'),
+        lib: resolve(__dirname, 'src', 'lib'),
+        services: resolve(__dirname, 'src', 'services'),
       },
     },
     css: {
