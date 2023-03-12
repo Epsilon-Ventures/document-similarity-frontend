@@ -1,11 +1,11 @@
 import { useState } from 'react';
 import { ResponseModel, PayloadModel } from 'pages/models';
+import { postQuestionForSimilarity } from 'services/post-question';
 import Parameters from './parameters';
 import QuestionInsertion from './question-insertion';
 import SimilarityAnalysis from './similarity-analysis';
 
 function QuestionSimilarity() {
-  const BASE_URL = import.meta.env.VITE_BACKEND_URL || 'localhost:8000';
   const [responseList, setResponseList] = useState<ResponseModel[]>([]);
   const [loading, setIsLoading] = useState(false);
   const [payload, setPayload] = useState<PayloadModel>({
@@ -19,14 +19,7 @@ function QuestionSimilarity() {
     setResponseList([]);
 
     try {
-      const response = await fetch(`${BASE_URL}/api/database-connection/`, {
-        method: 'POST',
-        headers: {
-          'content-type': 'application/json',
-        },
-        body: JSON.stringify(payload),
-      });
-      const dataResponse = await response.json();
+      const dataResponse = await postQuestionForSimilarity(payload);
       setResponseList(dataResponse);
       setIsLoading(false);
     } catch (err) {

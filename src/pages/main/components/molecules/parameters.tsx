@@ -1,6 +1,6 @@
 import { Select } from 'components/atoms';
 import { PayloadModel } from 'pages/models';
-import { subject, year } from '../../../../data.json';
+import { subject, year } from 'data/data.json';
 import styles from './parameters.module.css';
 import main from './index.module.css';
 
