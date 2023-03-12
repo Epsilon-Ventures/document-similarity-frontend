@@ -14,6 +14,7 @@ export default defineConfig((configEnv) => {
         hooks: resolve(__dirname, 'src', 'hooks'),
         lib: resolve(__dirname, 'src', 'lib'),
         services: resolve(__dirname, 'src', 'services'),
+        data: resolve(__dirname, 'src', 'data'),
       },
     },
     css: {
