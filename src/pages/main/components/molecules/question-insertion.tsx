@@ -1,5 +1,6 @@
 import { Button, Textarea } from 'components/atoms';
 import { PayloadModel } from 'pages/models';
+import { useNavigate } from 'react-router-dom';
 import styles from './index.module.css';
 
 interface Props {
@@ -7,6 +8,7 @@ interface Props {
 }
 
 function QuestionInsertion({ setPayload }: Props) {
+  const navigate = useNavigate();
   const { main, shadow } = styles;
 
   return (
@@ -17,8 +19,13 @@ function QuestionInsertion({ setPayload }: Props) {
         <h1 className="text-source-primary text-headline-medium font-semibold ">
           Question Similarity Detection
         </h1>
-        <Button className="bg-none text-black border-source-primary border-2 text-title-medium">
-          Load Model
+        <Button
+          className="bg-none border-source-primary border-2 text-title-medium"
+          // eslint-disable-next-line react/style-prop-object
+          style={{ color: 'rgb(99 56 238)' }}
+          onClick={() => navigate('/file-upload')}
+        >
+          Upload Files
         </Button>
       </div>
       <div className="flex flex-col gap-2">
