@@ -1,5 +1,6 @@
 import { Navbar } from 'components/molecules';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { FileResponse } from './file-response';
 import { FileUpload } from './file-upload';
 import { QuestionSimilarity } from './main/components';
 
@@ -11,6 +12,7 @@ function App(): JSX.Element {
         <Routes>
           <Route path="/" element={<QuestionSimilarity />} />
           <Route path="/file-upload" element={<FileUpload />} />
+          <Route path="/file-response" element={<FileResponse />} />
         </Routes>
       </main>
     </Router>
