@@ -18,9 +18,7 @@ function SubjectYearInfo({ subject, year, sem }: SubjectYearInfoProps) {
       <div>
         <p>{subject}</p>
         <p>
-          {year}
-          ,
-          {sem}
+          {year},{sem}
         </p>
       </div>
     </div>

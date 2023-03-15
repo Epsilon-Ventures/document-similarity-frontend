@@ -1,6 +1,7 @@
+import { Link } from 'react-router-dom';
 import { Button } from '../atoms';
-import styles from './navbar.module.css';
 import projectLogo from '../../assets/logo2.png';
+import styles from './navbar.module.css';
 
 function Navbar() {
   const { li, navbar } = styles;
@@ -22,7 +23,7 @@ function Navbar() {
                 <a href="/">Home</a>
               </li>
               <li className={`${li}`}>
-                <a href="https://localhost:3000/file-upload">Analyze</a>
+                <Link to="/file-upload">Analyze</Link>
               </li>
               <li className={`${li}`}>
                 <a href="/about">About Our Project</a>

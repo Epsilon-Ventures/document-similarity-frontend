@@ -26,11 +26,11 @@ function FileResponse() {
 
   return (
     <div className="container grid grid-cols-12 gap-2">
-      <div className="col-span-4 p-2">
-        <p>Question</p>
-        <div className="flex flex-col gap-2">
-          {inputQuestions.map((question) => (
-            <h3>{question}</h3>
+      <div className="flex flex-col gap-2 col-span-4 p-2">
+        <h3>Question</h3>
+        <div className="flex flex-col gap-1">
+          {inputQuestions.map((question, index) => (
+            <p className="text-body-medium">{`${index + 1}. ${question}`}</p>
           ))}
         </div>
       </div>
@@ -51,13 +51,13 @@ function FileResponse() {
           </div>
         ))}
       </div>
-      <div
-        className="col-span-3"
-        // style={{
-        //   boxShadow: '0 0 32px 2px rgba(0, 0, 0, 0.2)',
-        // }}
-      >
-        <p>Analysis</p>
+      <div className="col-span-3 p-2 flex flex-col gap-6">
+        <h3>Analysis</h3>
+        <p className="text-center text-headline-large">
+          <span>Under</span>
+          <br />
+          <span>Construction</span>
+        </p>
       </div>
     </div>
   );

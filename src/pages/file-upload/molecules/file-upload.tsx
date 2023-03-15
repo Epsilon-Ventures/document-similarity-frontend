@@ -31,6 +31,8 @@ function FileUpload() {
       // eslint-disable-next-line no-console
       console.log(err);
     }
+
+    setDisable(false);
   };
 
   return (
