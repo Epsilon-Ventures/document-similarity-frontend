@@ -1,0 +1,27 @@
+.aboutPage {
+  height: 85vh;
+}
+.mycontainer {
+  width: 1400px;
+  margin: 0 auto;
+}
+
+.heading {
+  color: #4a2df8;
+  margin-top: 6.6rem;
+  font-size: 44px;
+  width: 70%;
+  margin-bottom: 4rem;
+}
+
+.paragraph_area {
+  /* width: 70%; */
+}
+
+.abstract_des {
+  text-justify: inter-character;
+  margin-bottom: 2rem;
+  font-size: 2.2rem;
+  font-weight: 300;
+  line-height: 35px;
+}
