@@ -23,13 +23,16 @@ function FileUpload() {
     setFile(null);
 
     try {
-      const dataResponse = await uploadFile(file);
+      const fileResponse = await uploadFile(file);
       // eslint-disable-next-line no-console
-      console.log(dataResponse.data);
+      console.log('file response - ', fileResponse);
+      navigate('/file-response', { state: { fileResponse } });
     } catch (err) {
       // eslint-disable-next-line no-console
       console.log(err);
     }
+
+    setDisable(false);
   };
 
   return (

@@ -15,6 +15,7 @@ export default defineConfig((configEnv) => {
         lib: resolve(__dirname, 'src', 'lib'),
         services: resolve(__dirname, 'src', 'services'),
         data: resolve(__dirname, 'src', 'data'),
+        utils: resolve(__dirname, 'src', 'utils'),
       },
     },
     css: {

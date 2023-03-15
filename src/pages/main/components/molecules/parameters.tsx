@@ -12,7 +12,7 @@ function Parameters({ setPayload }: Props) {
   const { parameters } = styles;
   const { shadow } = main;
   return (
-    <div className={`flex flex-col gap-3 col-span-2 ${parameters} ${shadow}`}>
+    <div className={`flex flex-col gap-3 ${parameters} ${shadow}`}>
       <h2>Parameters</h2>
       <div className="flex flex-col gap-2 [&>h3]:text-source-primary">
         <Select
