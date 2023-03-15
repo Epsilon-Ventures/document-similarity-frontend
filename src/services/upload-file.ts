@@ -1,4 +1,4 @@
-import { postData } from '../lib';
+import { postData, getData as getQuestion } from '../lib';
 
 const BASE_URL = import.meta.env.VITE_BACKEND_URL || 'localhost:8000';
 
@@ -6,6 +6,11 @@ const uploadFile = async (file: File) => {
   const formData = new FormData();
   formData.append('file', file);
   const response = postData(`${BASE_URL}/api/file-upload/`, formData);
+  return (await response).data;
+};
+
+export const getFileQuestions = async () => {
+  const response = getQuestion(`${BASE_URL}/api/file-upload/`);
   return (await response).data;
 };
 

@@ -18,7 +18,7 @@ function ProgressBar({ progress }: ProgressBarProps) {
           style={{ width: progressValue }}
         />
       </div>
-      <span className={`text-white text-body-small font-bold mr-1 ${margin}`}>
+      <span className={`text-white text-body-large font-bold mr-1 ${margin}`}>
         {progressValue}
       </span>
     </div>

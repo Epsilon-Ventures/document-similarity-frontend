@@ -20,7 +20,7 @@ function TextArea({ placeholder, setPayload }: TextAreaProps) {
       onChange={payloadSubmitHandler}
       className={`resize-none border-2 border-light-grey rounded-2xl ${textarea}`}
       placeholder={placeholder}
-      rows={25}
+      rows={20}
     />
   );
 }
