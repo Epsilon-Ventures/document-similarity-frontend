@@ -26,7 +26,7 @@ function Navbar() {
                 <Link to="/file-upload">Analyze</Link>
               </li>
               <li className={`${li}`}>
-                <a href="/about-page">About Our Project</a>
+                <a href="/about-page">About Project</a>
               </li>
             </ul>
             <Button className="rounded-full text-title-medium ml-auto">
