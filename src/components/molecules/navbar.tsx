@@ -26,6 +26,12 @@ function Navbar() {
                 <Link to="/file-upload">Analyze</Link>
               </li>
               <li className={`${li}`}>
+                <Link to="/two-file-upload">Compare Paper</Link>
+              </li>
+              <li className={`${li}`}>
+                <Link to="/file-upload">Analyze</Link>
+              </li>
+              <li className={`${li}`}>
                 <a href="/about-page">About Project</a>
               </li>
             </ul>
