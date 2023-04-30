@@ -7,7 +7,6 @@ interface TwoFile {
   file1: string[];
   file2: string[];
 }
-
 function TwoFileResponse() {
   const { state } = useLocation();
   const [fileResponses] = useState(
