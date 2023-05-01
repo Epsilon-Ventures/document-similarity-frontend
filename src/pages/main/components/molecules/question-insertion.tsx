@@ -20,9 +20,9 @@ function QuestionInsertion({ setPayload }: Props) {
         </h1>
 
         <Button
-          className="bg-none border-source-primary border-2 text-title-medium"
+          className="bg-none text-title-medium"
           // eslint-disable-next-line react/style-prop-object
-          style={{ color: 'rgb(99 56 238)' }}
+          style={{ color: 'rgb(99 56 238)', border: '2px solid' }}
           onClick={() => navigate('/file-upload')}
         >
           Upload Files

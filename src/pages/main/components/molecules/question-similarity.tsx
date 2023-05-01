@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { ResponseModel, PayloadModel } from 'pages/models';
 import { postQuestionForSimilarity } from 'services/post-question';
-// import Parameters from './parameters';
 import QuestionInsertion from './question-insertion';
 import SimilarityAnalysis from './similarity-analysis';
 
@@ -32,7 +31,6 @@ function QuestionSimilarity() {
     <section className="h-[calc(100vh-6.4rem)]">
       <form onSubmit={submitHandler}>
         <div className="container grid grid-cols-2">
-          {/* <Parameters setPayload={setPayload} /> */}
           <QuestionInsertion setPayload={setPayload} />
           <SimilarityAnalysis responseList={responseList} loading={loading} />
         </div>

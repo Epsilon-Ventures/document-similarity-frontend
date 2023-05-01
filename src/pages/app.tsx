@@ -5,9 +5,10 @@ import { FileResponse } from './file-response';
 import { FileUpload } from './file-upload';
 import { QuestionSimilarity } from './main/components';
 import TwoFileUpload from './twoFileUpload';
-import TwoFileResponse from './twoFileResponse';
+import { TwoFileResponse } from './two-file-response';
 import { TopTwoQuestion } from './top-two-question';
 import { MultiQuestionUpload } from './multi-question-upload';
+import { TopTwoQuestionResponse } from './top-two-question-response';
 
 function App(): JSX.Element {
   return (
@@ -25,6 +26,10 @@ function App(): JSX.Element {
           <Route
             path="/question-paper-upload"
             element={<MultiQuestionUpload />}
+          />
+          <Route
+            path="/top-two-question-response"
+            element={<TopTwoQuestionResponse />}
           />
         </Routes>
       </main>

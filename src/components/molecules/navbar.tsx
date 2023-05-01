@@ -20,7 +20,7 @@ function Navbar() {
           <nav className="flex items-center flex-1">
             <ul className="flex text-title-medium cursor-pointer">
               <li className={`${li}`}>
-                <a href="/">Home</a>
+                <Link to="/">Home</Link>
               </li>
               <li className={`${li}`}>
                 <Link to="/file-upload">Analyze</Link>
@@ -29,10 +29,10 @@ function Navbar() {
                 <Link to="/two-file-upload">Compare Paper</Link>
               </li>
               <li className={`${li}`}>
-                <Link to="/file-upload">Analyze</Link>
+                <Link to="/question-paper-upload">Question Paper Upload</Link>
               </li>
               <li className={`${li}`}>
-                <a href="/about-page">About Project</a>
+                <Link to="/about-page">About Project</Link>
               </li>
             </ul>
             <Button className="rounded-full text-title-medium ml-auto">
