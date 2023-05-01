@@ -18,6 +18,7 @@ function SubjectYearInfo({ subject, year, sem }: SubjectYearInfoProps) {
       <div>
         <p>{subject}</p>
         <p>
+          {/* eslint-disable-next-line react/jsx-one-expression-per-line */}
           {year},{sem}
         </p>
       </div>

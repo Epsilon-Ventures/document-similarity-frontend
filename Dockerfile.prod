@@ -1,26 +1,38 @@
 # first stage
 FROM node:18.7.0-alpine3.15 as build
 
+RUN addgroup app && \
+    adduser -S -G app app && \
+    corepack enable && \
+    corepack prepare pnpm@latest --activate
+
+USER app
+
 WORKDIR /app
+    
+COPY ["package.json", "pnpm-lock.yaml", "./"]
 
-COPY package.json .
-
-COPY yarn.lock .
-
-RUN yarn install --frozen-lockfile
+RUN pnpm install --frozen-lockfile --prod --ignore-scripts
 
 COPY . .
 
-RUN yarn build
+RUN pnpm install vite@2.9.13 --save-dev
+
+RUN pnpm run build
 
 # 2nd stage
-FROM nginx:1.23.0-alpine
+FROM nginx:1.23.3-alpine-slim
+
+RUN rm /etc/nginx/conf.d/default.conf && \
+    chown -R nginx:nginx /var/cache/nginx && \
+    chown -R nginx:nginx /var/run && \
+    touch /var/run/nginx.pid && \
+    chown -R nginx:nginx /var/run/nginx.pid
 
 COPY --from=build /app/dist /usr/share/nginx/html
-
-RUN rm /etc/nginx/conf.d/default.conf
-
-COPY .nginx/nginx.conf /etc/nginx/conf.d
+COPY .nginx/nginx.conf /etc/nginx/conf.d/
+   
+USER nginx
 
 EXPOSE 80
 

@@ -22,9 +22,8 @@ function SimilarityAnalysis({ responseList, loading }: Props) {
       ) : (
         <div className="flex flex-col gap-1">
           {sortBySimScore(responseList).map(
-            ({
-              question, sim_score: simScore, id, subject, year, sem,
-            }) => (
+            // eslint-disable-next-line object-curly-newline
+            ({ question, sim_score: simScore, id, subject, year, sem }) => (
               <SimilarityCard
                 key={id}
                 question={question}
