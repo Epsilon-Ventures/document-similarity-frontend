@@ -30,10 +30,10 @@ function TwoFileUpload() {
     try {
       const fileResponse = await uploadTwoFile(files);
       // eslint-disable-next-line no-console
-      console.log('file response - ', fileResponse.overall_sim);
-      setSimilarityValue(fileResponse.overall_sim);
+      console.log('file response - ', fileResponse[0][0]);
+      setSimilarityValue(fileResponse[0][0]);
       navigate('/two-file-response', {
-        state: { fileResponse: fileResponse.overall_sim },
+        state: { fileResponse: fileResponse[0][0] },
       });
     } catch (err) {
       // eslint-disable-next-line no-console
