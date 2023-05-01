@@ -1,7 +1,15 @@
+/* eslint-disable @typescript-eslint/indent */
 import axios from 'axios';
-import { PayloadModel } from 'pages/models';
+import { PayloadModel, QuestionPaperModel } from 'pages/models';
 
-const postData = (url: string, data: FormData | PayloadModel) =>
+const postData = (
+  url: string,
+  data:
+    | FormData
+    | PayloadModel
+    | { subject: string; file: FormData }
+    | QuestionPaperModel,
+) =>
   // eslint-disable-next-line implicit-arrow-linebreak
   axios.post(url, data);
 

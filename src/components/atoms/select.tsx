@@ -1,4 +1,9 @@
-import { PayloadModel } from 'pages/models';
+/* eslint-disable @typescript-eslint/indent */
+import {
+  PaperMetaDataModel,
+  PayloadModel,
+  TopTwoQuestionModel,
+} from 'pages/models';
 import { PropsWithChildren } from 'react';
 import styles from './select.module.css';
 
@@ -6,7 +11,12 @@ type SelectProps = {
   id: string;
   defaultValue: string;
   optionList: string[];
-  setPayload?: React.Dispatch<React.SetStateAction<PayloadModel>>;
+  required?: boolean;
+  setPayload?: React.Dispatch<
+    React.SetStateAction<
+      PayloadModel | TopTwoQuestionModel | PaperMetaDataModel
+    >
+  >;
 };
 
 function Select({
@@ -14,13 +24,14 @@ function Select({
   id,
   defaultValue,
   optionList,
+  required,
   setPayload = () => {},
 }: PropsWithChildren<SelectProps>) {
   const { select } = styles;
   const payloadSubmitHandler = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setPayload((previous) => ({
       ...previous,
-      subject: e.target.value,
+      [e.target.name]: e.target.value,
     }));
   };
 
@@ -37,6 +48,7 @@ function Select({
         id={id}
         className={`border-light-grey rounded-lg ${select} bg-white border-2 cursor-pointer text-title-medium`}
         onChange={payloadSubmitHandler}
+        required={required}
       >
         <option value="">{defaultValue}</option>
         {optionList.map((option) => (
@@ -53,4 +65,5 @@ export default Select;
 
 Select.defaultProps = {
   setPayload: () => {},
+  required: false,
 };

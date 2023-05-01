@@ -1,0 +1,16 @@
+node_modules
+.idea
+dist
+.eslintcache
+.vercel
+.env
+yarn.lock
+./entrypoint.sh
+.gitignore
+.eslint*
+.prettier*
+.commitlint.config.js
+lint-staged.config.js
+README.md
+LICENSE
+jest.config.js

@@ -6,6 +6,8 @@ import { FileUpload } from './file-upload';
 import { QuestionSimilarity } from './main/components';
 import TwoFileUpload from './twoFileUpload';
 import TwoFileResponse from './twoFileResponse';
+import { TopTwoQuestion } from './top-two-question';
+import { MultiQuestionUpload } from './multi-question-upload';
 
 function App(): JSX.Element {
   return (
@@ -19,6 +21,11 @@ function App(): JSX.Element {
           <Route path="/about-page" element={<AboutPage />} />
           <Route path="/two-file-upload" element={<TwoFileUpload />} />
           <Route path="/two-file-response" element={<TwoFileResponse />} />
+          <Route path="/top-two-question" element={<TopTwoQuestion />} />
+          <Route
+            path="/question-paper-upload"
+            element={<MultiQuestionUpload />}
+          />
         </Routes>
       </main>
     </Router>
