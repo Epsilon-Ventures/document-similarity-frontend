@@ -32,7 +32,7 @@ function TwoFileUpload() {
       // eslint-disable-next-line no-console
       setSimilarityValue(fileResponse.overall_sim);
       navigate('/two-file-response', {
-        state: { fileResponse: fileResponse[0][0] },
+        state: { fileResponse },
       });
     } catch (err) {
       // eslint-disable-next-line no-console
