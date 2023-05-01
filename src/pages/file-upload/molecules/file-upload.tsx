@@ -75,9 +75,9 @@ function FileUpload() {
       </form>
 
       <Button
-        className="bg-none border-source-primary border-2 px-3"
+        className="bg-none px-3"
         // eslint-disable-next-line react/style-prop-object
-        style={{ color: 'rgb(99 56 238)' }}
+        style={{ color: 'rgb(99 56 238)', border: '2px solid' }}
         onClick={() => navigate('/')}
       >
         Back

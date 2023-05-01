@@ -30,10 +30,9 @@ function TwoFileUpload() {
     try {
       const fileResponse = await uploadTwoFile(files);
       // eslint-disable-next-line no-console
-      console.log('file response - ', fileResponse[0][0]);
-      setSimilarityValue(fileResponse[0][0]);
+      setSimilarityValue(fileResponse.overall_sim);
       navigate('/two-file-response', {
-        state: { fileResponse: fileResponse[0][0] },
+        state: { fileResponse },
       });
     } catch (err) {
       // eslint-disable-next-line no-console
@@ -96,9 +95,9 @@ function TwoFileUpload() {
       {similarityValue ? <p>{similarityValue}</p> : ''}
 
       <Button
-        className="bg-none border-source-primary border-2 px-3"
+        className="bg-none px-3"
         // eslint-disable-next-line react/style-prop-object
-        style={{ color: 'rgb(99 56 238)' }}
+        style={{ color: 'rgb(99 56 238)', border: '2px solid' }}
       >
         Back
       </Button>

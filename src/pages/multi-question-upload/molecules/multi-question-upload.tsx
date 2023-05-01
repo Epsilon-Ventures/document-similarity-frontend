@@ -122,6 +122,7 @@ function MultiQuestionUpload() {
                     value={formValue.question}
                     onChange={(e) => valueChangeHandler(index, e)}
                     className={`w-full ${input} rounded-lg outline-light-grey text-title-medium`}
+                    required
                   />
                 </label>
 
@@ -137,6 +138,7 @@ function MultiQuestionUpload() {
                     value={formValue.mark}
                     onChange={(e) => valueChangeHandler(index, e)}
                     className={`w-full ${input} rounded-lg outline-light-grey text-title-medium`}
+                    required
                   />
                 </label>
                 {index !== 0 && (

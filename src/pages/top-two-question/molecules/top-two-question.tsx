@@ -7,7 +7,6 @@ import { TopTwoQuestionModel } from 'pages/models';
 import styles from './top-two-question.module.css';
 
 function TopTwoQuestion() {
-  // const [disable, setDisable] = useState(true);
   const navigate = useNavigate();
   const { shadow, paddingBlock } = styles;
 
@@ -31,9 +30,10 @@ function TopTwoQuestion() {
     setPayload(null);
 
     try {
-      await checkTwoFile(payload);
-      // eslint-disable-next-line no-console
-      // navigate('/file-response', { state: { fileResponse } });
+      const fileResponse = await checkTwoFile(payload);
+      navigate('/top-two-question-response', {
+        state: { fileResponse, selectSubject: payload.subject },
+      });
     } catch (err) {
       // eslint-disable-next-line no-console
       console.log(err);
