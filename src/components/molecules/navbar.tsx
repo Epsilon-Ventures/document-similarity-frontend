@@ -29,6 +29,9 @@ function Navbar() {
                 <Link to="/two-file-upload">Compare Paper</Link>
               </li>
               <li className={`${li}`}>
+                <Link to="/top-two-question">Top Two Question</Link>
+              </li>
+              <li className={`${li}`}>
                 <Link to="/question-paper-upload">Question Paper Upload</Link>
               </li>
               <li className={`${li}`}>
