@@ -91,7 +91,7 @@ function MultiQuestionUpload() {
             setPayload={setConstPayload}
             required
           >
-            Subject
+            Year
           </Select>
 
           <Select
@@ -101,7 +101,7 @@ function MultiQuestionUpload() {
             setPayload={setConstPayload}
             required
           >
-            Subject
+            Semester
           </Select>
         </div>
 
