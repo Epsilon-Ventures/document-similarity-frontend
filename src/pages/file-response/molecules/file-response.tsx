@@ -26,8 +26,8 @@ function FileResponse() {
   }, []);
 
   return (
-    <div className="container grid grid-cols-12 gap-2">
-      <div className="flex flex-col gap-2 col-span-4 p-2">
+    <div className="container grid grid-cols-5 gap-2">
+      <div className="flex flex-col col-span-2 gap-2 p-2">
         <h3>Question</h3>
         <div className="flex flex-col gap-1">
           {inputQuestions.map((question, index) => (
@@ -35,7 +35,7 @@ function FileResponse() {
           ))}
         </div>
       </div>
-      <div className="flex flex-col gap-3 col-span-5 p-2 h-[100vh] overflow-y-scroll ">
+      <div className="flex flex-col col-span-3 gap-3 p-2 h-[100vh] overflow-y-scroll ">
         {fileResponses.map((fileResponse) => (
           <div className="flex flex-col gap-[6px]">
             {sortBySimScore(fileResponse).map((response) => (
@@ -51,14 +51,6 @@ function FileResponse() {
             ))}
           </div>
         ))}
-      </div>
-      <div className="col-span-3 p-2 flex flex-col gap-6">
-        <h3>Analysis</h3>
-        <p className="text-center text-headline-large">
-          <span>Under</span>
-          <br />
-          <span>Construction</span>
-        </p>
       </div>
     </div>
   );
